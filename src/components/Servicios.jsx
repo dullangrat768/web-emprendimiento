@@ -29,7 +29,7 @@ function Servicios() {
         {servicioslista.map((s, i) => (
           <div key={i} className="p-6 border rounded-xl hover:shadow-lg transition text-center">
             <div className="text-4xl mb-4">{s.icon}</div>
-            <h3 className="text-xl font-semibold mb-2 text-black">{s.title}</h3>
+            <h3 className="text-xl font-semibold mb-2 text-cyan-500">{s.title}</h3>
             <p className="text-white">{s.desc}</p>
           </div>
         ))}
