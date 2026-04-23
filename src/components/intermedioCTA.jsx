@@ -22,6 +22,7 @@
               <div>
                 <label className="block text-sm font-bold mb-2 text-white">Tu Nombre</label>
                 <input 
+                  name="firstname"
                   type="text" 
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                   placeholder="Ej: James Rodriguez"
@@ -29,7 +30,8 @@
               </div>
               <div>
                 <label className="block text-sm font-bold mb-2 text-white">¿Qué falla presenta?</label>
-                <textarea 
+                <textarea
+                  name="message"
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white h-24 focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"
                   placeholder="Ej: Mi pc se apaga en mis trabajos de edicion o renderizando"
                 ></textarea>
