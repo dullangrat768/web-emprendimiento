@@ -2,12 +2,16 @@ import React, { useEffect } from 'react';
 
 function IntermedioCTA() {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://js.hsforms.net/forms/embed/v2.js';
-    script.defer = true;
-    
-    script.onload = () => {
-      if (window.hbspt) {
+  const script = document.createElement('script');
+  script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+  script.defer = true;
+  
+  script.onload = () => {
+    const checkExist = setInterval(() => {
+      const container = document.getElementById('hubspot-form-container');
+      
+      if (container && window.hbspt) {
+        clearInterval(checkExist);
         window.hbspt.forms.create({
           region: "na1",
           portalId: "51380137",
@@ -15,14 +19,15 @@ function IntermedioCTA() {
           target: "#hubspot-form-container"
         });
       }
-    };
-    
-    document.body.appendChild(script);
-    
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+    }, 100); 
+  };
+  
+  document.body.appendChild(script);
+  
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
   
   return (
     <section className="bg-slate-900 py-20 px-6">
