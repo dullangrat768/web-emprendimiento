@@ -5,7 +5,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-20 bg-cyan-900 px-6">
+    <section id="FAQ" className="py-20 bg-cyan-900 px-6">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-3xl font-bold mb-10 text-white text-center">Preguntas Frecuentes</h2>
         <div className="space-y-6">
