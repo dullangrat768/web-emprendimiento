@@ -11,7 +11,7 @@ export default function FAQ() {
         <div className="space-y-6">
           {faqs.map((f, i) => (
             <div key={i} className="border-b border-slate-200 pb-4">
-              <h3 className="font-bold text-lg mb-2 text-black">¿{f.q}?</h3>
+              <h3 className="font-bold text-lg mb-2 text-black faq-question cursor-pointer">¿{f.q}?</h3>
               <p className="text-slate-600 text-white">{f.a}</p>
             </div>
           ))}
