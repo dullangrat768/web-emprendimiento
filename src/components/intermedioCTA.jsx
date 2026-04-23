@@ -8,6 +8,12 @@ function IntermedioCTA() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEnviando(true);
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'start_conversion',
+      form_id: 'cta_intermedio_pc'
+    });
     
     const portalId = "51380137";
     const formId = "e321078c-257a-4e66-9526-149ffe8bca00";
@@ -33,6 +39,13 @@ function IntermedioCTA() {
       });
 
       if (res.ok) {
+        // EVENTO: Conversión exitosa (solo si HubSpot responde ok)
+        window.dataLayer.push({
+          event: 'generate_lead',
+          tipo_servicio: 'diagnostico_pc'
+        });
+
+        
         alert("¡Recibido! Nos pondremos en contacto para el soporte de tu PC.");
         setNombre('');
         setFalla('');
