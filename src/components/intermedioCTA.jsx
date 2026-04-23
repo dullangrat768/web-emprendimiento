@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 function IntermedioCTA() {
   useEffect(() => {
     const script = document.createElement('script');
