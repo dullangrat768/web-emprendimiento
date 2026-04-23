@@ -1,4 +1,27 @@
 function IntermedioCTA() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+    script.defer = true;
+    
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          region: "na1",
+          portalId: "51380137",
+          formId: "e321078c-257a-4e66-9526-149ffe8bca00",
+          target: "#hubspot-form-container"
+        });
+      }
+    };
+    
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
   return (
     <section className="bg-slate-900 py-20 px-6">
       <div className="max-w-6xl mx-auto bg-cyan-900 rounded-3xl overflow-hidden shadow-2xl">
