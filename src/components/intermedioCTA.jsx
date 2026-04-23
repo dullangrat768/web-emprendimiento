@@ -15,13 +15,15 @@ function IntermedioCTA() {
     const data = {
       fields: [
         { name: "firstname", value: nombre },
-        { name: "message", value: falla }
-      ],
+        { name: "message", value: falla },
+    
+        { name: "email", value: `${nombre.replace(/\s+/g, '').toLowerCase()}@cliente.com` } 
+    ],
       context: {
-        pageUri: window.location.href,
-        pageName: document.title
-      }
-    };
+      pageUri: window.location.href,
+      pageName: document.title
+    }
+};
 
     try {
       const res = await fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
